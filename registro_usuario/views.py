@@ -13,7 +13,6 @@ def find_books(request):
 def books_list(request):
     valor_input = request.GET.get('query')
     if valor_input:
-        print('valorinput', valor_input)
         books = consumo_api_nombre(valor_input)
         return render(request, 'books_list.html',{'books': books, 'valor_input': valor_input})
     return render(request, 'search.html')

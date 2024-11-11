@@ -87,6 +87,10 @@ li {
 section a {
     text-decoration: none;
     color: black;
+    text-transform: uppercase;
+    font-family: monospace;
+    letter-spacing: 3px;
+
 }
 
 main {

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <section>
@@ -6,13 +7,17 @@
     <h1>Libros de {{ valor_input }}</h1>
     <ul>
         {% for book in books %}
-        <li>
-            <a href="{% url 'description' book_id=book.id %}?query={{ valor_input }}">
-                {{ book.volumeInfo.title|default:'AUTOR NO DISPONIBLE' }} - {{ book.volumeInfo.authors|default:'AUTOR NO DISPONIBLE' }} 
-            </a>
-        </li>
+            <li>
+                <a href="{% url 'description' book_id=book.id %}?query={{ valor_input }}">
+                    {{ book.volumeInfo.title|default:'AUTOR NO DISPONIBLE' }} - 
+                    {{ book.volumeInfo.authors|default:'AUTOR NO DISPONIBLE' }} 
+                </a>
+            </li>
         {% endfor %}
     </ul>
+    {% else %}
+        <h1>No hay libros para mostrar.</h1>
+        <a href="{% url 'search' %}">Volver atrás</a>
     {% endif %}
 </section>
 {% endblock %}
