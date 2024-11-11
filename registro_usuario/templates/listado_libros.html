@@ -7,7 +7,7 @@
     <ul>
         {% for book in books %}
         <li>
-            <a href="{%  url 'descripcion' book.id %}">
+            <a href="{%  url 'description' book.id %}">
                 {{ book.volumeInfo.title }} - {{ book.volumeInfo.authors }} 
             </a>
         </li>
