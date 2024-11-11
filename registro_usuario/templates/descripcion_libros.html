@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="div_descripcion_libros">
+    <h1>
+        {{ book.volumeInfo.title }} - {{ book.volumeInfo.authors }}
+    </h1>
+    <img src="{{ book.volumeInfo.imageLinks.thumbnail }}" alt="Portada del libro">
+    <p>
+        {{ book.volumeInfo.description|safe  }}
+    </p>
+    <a href="{% url 'buscador' %}">volver atras</a>
+</main>
+{% endblock %}
+
+

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    {% if books %}
+    <h1>Libros de {{ valor_input }}</h1>
+    <ul>
+        {% for book in books %}
+        <li>
+            <a href="{%  url 'descripcion' book.id %}">
+                {{ book.volumeInfo.title }} - {{ book.volumeInfo.authors }} 
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</section>
+{% endblock %}
