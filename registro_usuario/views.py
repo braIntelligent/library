@@ -7,6 +7,8 @@ def find_books(request):
         books = consumo_api_nombre(valor_input)
         if valor_input:
             return render(request, 'listado_libros.html',{'books': books, 'valor_input': valor_input})
+    else:
+        return render(request, 'buscador.html')
     return render(request, 'buscador.html')
 
 def descripcion(request, book_id):
