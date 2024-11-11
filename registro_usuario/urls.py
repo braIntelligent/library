@@ -3,5 +3,8 @@ from . import views
 
 urlpatterns = [
     path('', views.find_books, name='search'),
-    path('description/<str:book_id>', views.descripcion, name='description')
+    path('books-list/', views.books_list, name='bookslist'),
+    path('description/<str:book_id>', views.description, name='description')
 ]
+
+handler404 = 'mi_app.views.custom_404'

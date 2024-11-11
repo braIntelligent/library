@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+    <h1>
+        {{ book.volumeInfo.title }} - {{ book.volumeInfo.authors|default:'AUTOR NO DISPONIBLE. ' }}
+    </h1>
+    <img src="{% if book.volumeInfo.imageLinks.thumbnail %}{{ book.volumeInfo.imageLinks.thumbnail }}{% else %}{% static 'default.avif' %}{% endif %}" alt="Portada del libro">
+    <p>
+        {{ book.volumeInfo.description|safe|default:'SIN DESCRIPCION DISPONIBLE.'  }}
+    </p>
+    <a href="{% url 'bookslist' %}?query={{ valor_input }}">volver atras</a>
+</main>
+{% endblock %}
+
+

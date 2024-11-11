@@ -7,8 +7,8 @@
     <ul>
         {% for book in books %}
         <li>
-            <a href="{%  url 'description' book.id %}">
-                {{ book.volumeInfo.title }} - {{ book.volumeInfo.authors }} 
+            <a href="{% url 'description' book_id=book.id %}?query={{ valor_input }}">
+                {{ book.volumeInfo.title|default:'AUTOR NO DISPONIBLE' }} - {{ book.volumeInfo.authors|default:'AUTOR NO DISPONIBLE' }} 
             </a>
         </li>
         {% endfor %}

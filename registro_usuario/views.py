@@ -1,23 +1,31 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from registro_usuario.services.consumo_api import *
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 def find_books(request):
     if request.method == 'POST':
         valor_input = request.POST.get('input-value')
-        books = consumo_api_nombre(valor_input)
-        if valor_input:
-            return render(request, 'listado_libros.html',{'books': books, 'valor_input': valor_input})
-    else:
-        return render(request, 'buscador.html')
-    return render(request, 'buscador.html')
+        url = reverse('bookslist') + f'?query={valor_input}'
+        return HttpResponseRedirect(url)
+    return render(request, 'search.html')
 
-def descripcion(request, book_id):
+def books_list(request):
+    valor_input = request.GET.get('query')
+    if valor_input:
+        print('valorinput', valor_input)
+        books = consumo_api_nombre(valor_input)
+        return render(request, 'books_list.html',{'books': books, 'valor_input': valor_input})
+    return render(request, 'search.html')
+
+def description(request, book_id):
+    valor_input = request.GET.get('query') 
     book = consumo_api_id(book_id)
     book["volumeInfo"]["authors"] = ", ".join(book["volumeInfo"]["authors"])
-    return render(request, 'descripcion_libros.html', {'book': book})
+    return render(request, 'books_description.html', {'book': book, 'valor_input': valor_input})
 
-
-
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
 
 
 

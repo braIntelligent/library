@@ -90,12 +90,11 @@ section a {
 }
 
 main {
-    padding: 40px;
-    height: 100%;
-    overflow-y: auto;
+    padding: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20%;
 }
 
 main img {
@@ -104,10 +103,10 @@ main img {
 }
 
 main p {
-    display: inline;
     text-transform: uppercase;
     font-family: monospace;
     line-height: 20px;
+    text-align: center;
 }
 
 main a {
@@ -119,4 +118,11 @@ main a {
     color: white;
     padding: 1%;
     background-color: black;
+}
+
+main h1 {
+    text-transform: uppercase;
+    font-family: monospace;
+    text-align: center;
+    margin: 4% 0%;
 }
