@@ -16,10 +16,12 @@ header h1 {
     color: white;
     letter-spacing: 3px;
     text-decoration: none;
+    text-align: center;
 }
 
 header a {
     text-decoration: none;
+    text-align: center;
 }
 
 form {
@@ -44,7 +46,7 @@ form input {
     width: 60%;
 }
 
-form button {
+button {
     font-family: monospace;
     letter-spacing: 3px;
     background-color: black;
@@ -52,6 +54,7 @@ form button {
     border: none;
     padding: 0.70%;
     width: 35%;
+    text-align: center;
 }
 
 section {
@@ -67,6 +70,7 @@ section h1 {
     text-transform: uppercase;
     font-family: monospace;
     letter-spacing: 3px;
+    text-align: center;
 }
 
 ul {
@@ -86,11 +90,20 @@ li {
 
 section a {
     text-decoration: none;
-    color: black;
     text-transform: uppercase;
     font-family: monospace;
-    letter-spacing: 3px;
+    color: black;
+    text-align: center;
+}
 
+#button {
+    font-family: monospace;
+    letter-spacing: 3px;
+    background-color: black;
+    color: white;
+    padding: 0.45%;
+    width: 25%;
+    text-align: center;
 }
 
 main {
@@ -122,6 +135,7 @@ main a {
     color: white;
     padding: 1%;
     background-color: black;
+    text-align: center;
 }
 
 main h1 {
@@ -129,4 +143,5 @@ main h1 {
     font-family: monospace;
     text-align: center;
     margin: 4% 0%;
+    text-align: center;
 }

@@ -7,7 +7,8 @@ def find_books(request):
     if request.method == 'POST':
         valor_input = request.POST.get('input-value')
         url = reverse('bookslist') + f'?query={valor_input}'
-        return HttpResponseRedirect(url)
+        if valor_input:
+            return HttpResponseRedirect(url)
     return render(request, 'search.html')
 
 def books_list(request):
